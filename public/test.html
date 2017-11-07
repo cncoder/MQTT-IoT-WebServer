@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <title>Plant conditions</title>
+        <!-- jQuery -->
+    
+    
+    <link href="https://cdn.bootcss.com/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap-switch/3.3.4/js/bootstrap-switch.js"></script>
+        <script>
+            $('[name="status"]').bootstrapSwitch({  
+        onText:"启动",  
+        offText:"停止",  
+        onColor:"success",  
+        offColor:"info",  
+        size:"small",  
+        onSwitchChange:function(event,state){  
+            if(state==true){  
+                $(this).val("1");  
+            }else{  
+                $(this).val("2");  
+            }  
+        }  
+    }) 
+        </script>
+    </head>
+    <body>
+            <div class="make-switch" data-on="info" data-off="success">
+                    <input type="checkbox" checked>
+                </div>
+                <div class="make-switch" data-on="success" data-off="warning">
+                    <input type="checkbox" checked>
+                </div>
+                <div class="make-switch" data-on="warning" data-off="danger">
+                    <input type="checkbox" checked>
+                </div>
+                <div class="make-switch" data-on="danger" data-off="default">
+                    <input type="checkbox" checked>
+                </div>
+                <div class="make-switch" data-on="default" data-off="primary">
+                    <input type="checkbox" checked>
+                </div>
+    </body>
+    </html>

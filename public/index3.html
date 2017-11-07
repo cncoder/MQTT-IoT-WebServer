@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Tahoma, Geneva, sans-serif;
+      }
+
+      div {
+        display: inline;
+      }
+    </style>
+    <script>
+      function updateStats(memuse) {
+        console.log(memuse);
+        //memuse = memuse.state.reporte;
+        document.getElementById('light').innerHTML = memuse.light;
+        document.getElementById('moisture').innerHTML = memuse.mois;
+        document.getElementById('temperature').innerHTML = memuse.temp;
+        document.getElementById('threshould').innerHTML = memuse.threshould;
+      }
+
+      var host = window.document.location.host.replace(/:.*/, '');
+      var ws = new WebSocket('ws://' + host + ':3000');
+      ws.onmessage = function (event) {
+        //var resdata = JSON.stringify(event.data)
+        //var resdata = JSON.parse(resdata)
+        //console.log(resdata)
+        updateStats(JSON.parse(event.data));
+      };
+    </script>
+  </head>
+  <body>
+    <strong>Server Stats</strong><br>
+    Light: <div id='light'></div><br>
+    Moisture: <div id='moisture'></div><br>
+    Temperature: <div id='temperature'></div><br>
+    Threshould: <div id='threshould'></div><br>
+  </body>
+</html>
