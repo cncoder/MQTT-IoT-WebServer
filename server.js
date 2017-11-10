@@ -18,11 +18,11 @@ var AWSIoTData = require('aws-iot-device-sdk');
 // connection will be terminated.
 //
 var thingShadows = AWSIoTData.thingShadow({
-    keyPath: 'cert/private.pem',
+    keyPath: 'cert/private.pem.key',
    certPath: 'cert/certificate.pem',
-     caPath: 'cert/rootca.pem',
+     caPath: 'cert/rootCA.cert',
    clientId: 'iot-flower-website',
-       host: 'XXXX.iot.XXXX.amazonaws.com'
+       host: 'XXXX.iot.XXX.amazonaws.com'
  });
 
 //   
