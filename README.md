@@ -2,7 +2,7 @@
 
 ## The device project
 
-You must deploy this project at first.
+You must deploy this project at first.（On AWS EC2）
 
 https://github.com/cncoder/water-iot
 
